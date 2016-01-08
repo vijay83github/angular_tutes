@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>001_en</title>
+		<meta name="author" content="TrainingUser" />
+		<!-- Date: 2016-01-06 -->
+		<script>
+		function pasteInInput2(){
+			
+			 var x= document.getElementById("text1");
+			 document.getElementById("text2").value = x.value;
+		}
+		</script>
+	</head>
+	<body>
+		<input id="text1" onkeyup="pasteInInput2()"/>
+		<br />
+		<input id="text2" />
+	</body>
+</html>
+

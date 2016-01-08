@@ -1,0 +1,26 @@
+<!DOCTYPE HTML >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Filter | custom</title>
+        <script src="lib/angular.js"></script>
+        <script>
+        	angular.module("app",[]);
+        	angular.module("app").controller("userController",function($scope){
+        		$scope.userName = "Batman";
+        	});
+        	angular.module("app").filter("tieto",function(){
+        		return function(args1, args2, args3){
+        			return "First := " + args1 + " Second := "+ args2 + " Third value := "+ args3;
+        		}
+        		
+        	});
+        	window.onload = function(){
+        		angular.bootstrap(document, ["app"]);
+        	};
+        </script>
+    </head>
+    <body ng-controller="userController">
+        <h1>{{ userName | tieto : 'Superman' : 'Ironman' }}</h1>
+    </body>
+</html>

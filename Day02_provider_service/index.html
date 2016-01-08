@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <title>Provider Project</title>
+        
+        <script src="lib/angular.js"></script>
+        <script src="com/tieto/modules/app.js"></script>
+        <script>
+        	(function(){
+        		var app = angular.module("app",[]);
+        		app.controller("mycontroller",function($scope,hero){
+        			$scope.city = hero.hc;
+        			$scope.title = hero.ht;
+        		});
+        		/*app.provider("hero",function(){
+        			this.$get = function() {
+        							  var title = "Batman";
+        							  var city = "Gotham";
+        							  return {
+        							  	ht : title,
+        							  	hc : city
+        							
+        							  };
+        							}
+        		}); */
+        		
+        		app.config(function($provide){
+        			$provide.provider("hero",function(){
+        				this.$get = function() {
+        							  var title = "Batman";
+        							  var city = "Gotham";
+        							  return {
+        							  	ht : title,
+        							  	hc : city
+        							
+        							  };
+        							}
+        			})
+        		})
+        	})();
+        </script>
+        </head>
+    <body ng-app="app">
+        <h1>New Web Project Page</h1>
+        <div ng-controller= "mycontroller" >
+        	<ul>
+        		<li>{{ title}}</li>
+        		<li>{{ city}}</li>
+        	</ul>
+        </div>
+    </body>
+</html>

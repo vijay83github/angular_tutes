@@ -1,0 +1,28 @@
+
+<div class="form-group">
+	    <label for="exampleInputEmail1">Filter : </label>
+	    <input class="form-control" ng-model="filterBy" >
+	  </div>
+<div ng-controller="heroController" >
+	
+<table border="1" class="table table-responsive table-striped">
+	<tr>
+		<td ng-click="sortFun('title')">Title</td>
+		<td ng-click="sortFun('city')">City</td>
+		<td ng-click="sortFun('movies')">movies</td>
+		
+		<td ng-click="sortFun('power')">Power</td>
+		<td ng-click="sortFun('photo')">Photo</td>
+	</tr>
+	<tr data-ng-repeat="hero in heros | orderBy:sortBy:reverse | filter:{title:filterBy} "> 
+		<td>{{ hero.title | uppercase}} </td>
+		<td>{{ hero.city}}</td>
+		<td>{{ hero.movies }}</td>
+	
+		<td ng-class="hero.power<8 ?'red':'green'">{{ hero.power}}</td>
+		<td><img ng-src="public/{{ hero.photo}}"  width="50" align="absmiddle" /></td>
+		<td><a href="#/movies/{{hero.id }}" class="btn btn-default">view movies</a></td>
+		
+	</tr>
+</table>
+</div>

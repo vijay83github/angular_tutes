@@ -1,0 +1,9 @@
+angular.module("app").controller("batmanController",function($scope){
+	$scope.title="Batman"; 
+	$scope.releaseDate="2016-01-01"; 
+	$scope.fName="Bruce"; 
+	$scope.lName="Wayne"; 
+	$scope.city="Gotham"; 
+	$scope.power=7; 
+	$scope.image="images/bat1_tn.jpg";
+});

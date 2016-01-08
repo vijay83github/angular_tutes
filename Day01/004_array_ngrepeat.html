@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html  lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Hello world</title>
+		<meta name="author" content="TrainingUser" />
+		<script src="lib/angular.js"></script>
+	</head>
+	
+	<body data-ng-app data-ng-init="users=['Batman','Superman','Ironman']">
+		<ul>
+			<li data-ng-repeat="user in users"> {{user}}</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<title>Many Controllers</title>
+	<script src="public/lib/angular.js"></script>
+	<script src="public/lib/angular-route.js"></script>
+	<script src="com/tieto/module/app.js"></script>
+	<script src="com/tieto/services/service.js"></script>
+	<script src="com/tieto/controllers/mainController.js"></script>
+	<script src="com/tieto/controllers/heroController.js"></script>
+	<script src="com/tieto/controllers/moviesController.js"></script>
+	
+	
+</head>
+<body ng-app="app">
+	
+	<div class="container-fluid">
+		<ul class="nav nav-tabs">
+			<li> <a href="#/batman">Batman</a></li>
+			<li> <a href="#/superman">Superman</a></li>
+			<li> <a href="#/ironman">Ironman</a></li>
+			<li> <a href="#/Spiderman">Spiderman</a></li>
+			
+		</ul>
+		<ng-view></ng-view>
+	</div>
+</body>
+</html>

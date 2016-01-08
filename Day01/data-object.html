@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8" />
+	<title> data object</title>
+	<script src="lib/angular.js"></script>
+	<body data-ng-app data-ng-init="heros=[{title:'Batman', releaseDate:'2016-1-1', fName:'Bruce', lName:'Wayne', city:'Gotham', power:7, image:'images/bat1_tn.png'},
+{title:'Ironman', releaseDate:'2016-02-02', fName:'Tony', lName:'Stork', city:'New jersey', power:8 , image:'images/iron1_tn.png'},
+{title:'Spiderman', releaseDate:'2016-03-03', fName:'Peter', lName:'Parker', city:'New york', power:9, image:'images/spider1_tn.jpg'},
+{title:'Robot', releaseDate:'2016-04-04', fName:'Rajni', lName:'Kanth', city:'Chennai', power:70, image:'images/rajani.jpg' },
+{title:'Superman', releaseDate:'2016-07-03', fName:'Clark', lName:'Kent', city:'Chicago', power:9, image:'images/spider1_tn.jpg'},
+{title:'Phantom', releaseDate:'2016-04-05', fName:'One', lName:'Two', city:'Mumbai', power:7, image:'images/superman.jpg'}]">
+<ul>
+	<li data-ng-repeat="hero in heros"> {{hero.title}} +" is from " + hero.city}}</li>
+</ul>
+</body>
+</html>

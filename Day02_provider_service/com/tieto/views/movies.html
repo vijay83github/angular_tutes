@@ -1,0 +1,20 @@
+<div data-ng-controller="moviesController" >
+<table border="0" class="table table-responsive table-striped">
+	<tr>
+		<th >sl</th>
+		<th >title</th>
+		<th >poster</th>
+		
+		
+	</tr>
+	<tr data-ng-repeat="movie in movieList  "> 
+		<td>{{ movie.sl }} </td>
+		<td>{{ movie.title}}</td>
+		
+		<td><img ng-src="{{ movie.poster}}"/></td>
+		
+		
+	</tr>
+</table>
+<a class="btn btn-primary" onclick="window.history.back()">Home</a>
+</div>

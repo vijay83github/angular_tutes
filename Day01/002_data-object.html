@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8" />
+	<title> data object</title>
+	<script src="lib/angular.js"></script>
+	<head>
+		<style>
+			.red {background-color:red;}
+			.green{background-color:green;}
+		</style>
+	</head>
+	<body data-ng-app data-ng-init="heros=[{title:'Batman', releaseDate:'2016-01-01', fName:'Bruce', lName:'Wayne', city:'Gotham', power:7, image:'images/bat1_tn.jpg',price:500},
+{title:'Ironman', releaseDate:'2016-02-02', fName:'Tony', lName:'Stork', city:'New jersey', power:8 , image:'images/iron1_tn.jpg',price:400},
+{title:'Spiderman', releaseDate:'2016-03-03', fName:'Peter', lName:'Parker', city:'New york', power:9, image:'images/spider1_tn.jpg',price:350},
+{title:'Robot', releaseDate:'2016-04-04', fName:'Rajni', lName:'Kanth', city:'Chennai', power:70, image:'images/rajani.jpg',price:300 },
+{title:'Superman', releaseDate:'2016-07-03', fName:'Clark', lName:'Kent', city:'Chicago', power:9, image:'images/phantom.jpg',price:200},
+{title:'Phantom', releaseDate:'2016-04-05', fName:'One', lName:'Two', city:'Mumbai', power:7, image:'images/superman.jpg',price:100}]">
+<table border="1">
+	<tr>
+		<td>Title</td>
+		<td>City</td>
+		<td>Release Date</td>
+		<td>First Name</td>
+		<td>Last Name</td><td>Power</td> <td>Photo</td>
+	</tr>
+	<tr data-ng-repeat="hero in heros"> 
+		<td>{{ hero.title | uppercase}} </td>
+		<td>{{ hero.city}}</td>
+		<td>{{ hero.releaseDate | date:"dd-MMM-yyyy /EEE" }}</td>
+		<td>{{ hero.fName}}</td>
+		<td>{{ hero.lName}}</td>
+		<td ng-class="hero.power<8 ?'red':'green'">{{ hero.power}}</td>
+		<td><img ng-src="{{ hero.image}}"/></td>
+		<td>{{ hero.price|currency:"Rs. ":"3"}}</td>
+	</tr>
+</table>
+</body>
+</html>

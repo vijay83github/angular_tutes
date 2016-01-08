@@ -1,0 +1,38 @@
+<!DOCTYPE HTML >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Directive | custom</title>
+        <script src="lib/angular.js"></script>
+        <script>
+        	angular.module("app",[]);
+        	angular.module("app").controller("mycontroller",function($scope){
+        		$scope.title ="Batman";
+        		$scope.city = "Gotham";
+        	});
+        	angular.module("app").directive("myDir",function(){
+        		return{
+        			template : "<button>{{myTitle}}</button><input ng-model ='myTitle'/>",
+        			replace : true,
+        			restrict : "CAEM",
+        			scope : {
+        				myTitle : "="
+        			}
+        		};
+        	});
+        </script>
+    </head>
+    <body ng-app="app" ng-controller="mycontroller">
+       
+        <div my-dir="" myTitle={{ title }}></div>
+       
+       <hr/>
+        <my-dir myTitle={{ title }}></my-dir>
+        
+        <hr/>
+        <div class="my-dir"></div>
+        
+        <hr/>
+        <!-- directiv:my-dir -->
+    </body>
+</html>

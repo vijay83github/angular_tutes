@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <title>Value Project</title>
+        
+        <script src="lib/angular.js"></script>
+        <script src="app/module.js"></script>
+        <script src="app/value.js"></script>
+        <script src="app/controller1.js"></script>
+        <script src="app/controller2.js"></script>
+    </head>
+    <body ng-app="app">
+        <h1>Value Project Page</h1>
+        <div class="box" ng-controller="controller1">
+        	<ul>
+        		<li>Company name: {{ compName }}</li>
+        		<li>city is : {{ city }}</li>
+        		<li>Employee strength : {{ headCount }}</li>
+        	</ul>
+        </div>
+        <div class="box" ng-controller="controller2">
+        	<ul>
+        		<li>Company name: {{ compName }}</li>
+        		<li>city is : {{ city }}</li>
+        		<li>Employee strength : {{ headCount }}</li>
+        	</ul>
+        </div>
+    </body>
+</html>

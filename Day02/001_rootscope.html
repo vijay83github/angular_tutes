@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Many Controllers</title>
+	<script src="lib/angular.js"></script>
+	<script>
+		var app = angular.module("app",[]);
+		app.controller("controller1", function($scope,$rootScope){
+			$scope.branch = "Pune";
+			$rootScope.compName = "Tieto ";
+			$scope.fullName = $rootScope.compName + $scope.branch; 
+			
+		});
+		
+		app.controller("controller2", function($scope,$rootScope){
+			$scope.branch = "Banglore";
+			$scope.fullName = $rootScope.compName + $scope.branch; 
+			
+		});
+		
+		app.controller("controller3", function($scope,$rootScope){
+			$scope.branch = "Mumbai";
+			$scope.fullName = $rootScope.compName + $scope.branch; 
+			
+		});
+	</script>
+</head>
+<body ng-app="app">
+	<div ng-controller="controller1">
+		<h1>
+			{{fullName}}
+		</h1>
+	</div>
+	<div ng-controller="controller2">
+		<h1>
+			{{fullName}}
+		</h1>
+	</div>
+	<div ng-controller="controller3">
+		<h1>
+			{{fullName}}
+		</h1>
+	</div>
+	
+</body>
+</html>

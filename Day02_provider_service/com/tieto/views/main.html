@@ -1,0 +1,23 @@
+<input ng-model="filterBy" />
+<div ng-controller="mainController" >
+<table border="0" class="table table-responsive table-striped">
+	<tr>
+		<td ng-click="sortFun('title')">Title</td>
+		<td ng-click="sortFun('city')">City</td>
+		<td ng-click="sortFun('movies')">movies</td>
+		
+		<td ng-click="sortFun('power')">Power</td>
+		<td ng-click="sortFun('photo')">Photo</td>
+	</tr>
+	<tr data-ng-repeat="hero in heros | orderBy:sortBy:reverse | filter:{title:filterBy} "> 
+		<td>{{ hero.title | uppercase}} </td>
+		<td>{{ hero.city}}</td>
+		<td>{{ hero.movies }}</td>
+	
+		<td ng-class="hero.power<8 ?'red':'green'">{{ hero.power}}</td>
+		<td><img ng-src="{{ hero.photo}}"/></td>
+		<td><a href="#/heroes/{{hero.id }}"><button class="btn btn-default">view movies</button></a></td>
+		
+	</tr>
+</table>
+</div>
